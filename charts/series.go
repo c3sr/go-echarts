@@ -7,7 +7,8 @@ type seriesOptser interface {
 // LabelTextOpts contains options for a label text.
 type LabelTextOpts struct {
 	// 是否显示标签
-	Show bool `json:"show"`
+	Show   bool `json:"show"`
+	Rotate int  `json:"rotate,omitempty"`
 	// 文字的颜色
 	Color string `json:"color,omitempty"`
 	// 标签的位置
