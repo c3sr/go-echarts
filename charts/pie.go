@@ -1,8 +1,12 @@
 package charts
 
 import (
-	"github.com/chenjiandongx/go-echarts/datatypes"
 	"io"
+	"sort"
+
+	"github.com/spf13/cast"
+
+	"github.com/chenjiandongx/go-echarts/datatypes"
 )
 
 // Pie represents a pie chart.
@@ -55,6 +59,39 @@ func (c *Pie) Add(name string, data map[string]interface{}, options ...seriesOpt
 	nvs := make([]datatypes.NameValueItem, 0)
 	for k, v := range data {
 		nvs = append(nvs, datatypes.NameValueItem{Name: k, Value: v})
+	}
+	series := singleSeries{Name: name, Type: ChartType.Pie, Data: nvs}
+	series.setSingleSeriesOpts(options...)
+	c.Series = append(c.Series, series)
+	c.setColor(options...)
+	return c
+}
+
+// AddSorted sorts and adds new data sets.
+func (c *Pie) AddSorted(name string, data map[string]interface{}, options ...seriesOptser) *Pie {
+	nvs := make([]datatypes.NameValueItem, 0)
+
+	// sort by value
+	hack := map[interface{}]string{}
+	hackkeys := []float64{}
+	for key, val := range data {
+		valFloat, err := cast.ToFloat64E(val)
+		if err != nil {
+			panic("value is not float")
+		}
+
+		hack[valFloat] = key
+
+		hackkeys = append(hackkeys, valFloat)
+	}
+	sort.Slice(hackkeys, func(i, j int) bool {
+		return hackkeys[i] > hackkeys[j]
+	})
+
+	for _, val := range hackkeys {
+		nvs = append(nvs, datatypes.NameValueItem{Name: hack[val], Value: val})
+
+		// fmt.Println("==> ", hack[val], " === ", val)
 	}
 	series := singleSeries{Name: name, Type: ChartType.Pie, Data: nvs}
 	series.setSingleSeriesOpts(options...)
