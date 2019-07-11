@@ -4,9 +4,8 @@ import (
 	"io"
 	"sort"
 
-	"github.com/spf13/cast"
-
 	"github.com/chenjiandongx/go-echarts/datatypes"
+	"github.com/spf13/cast"
 )
 
 // Pie represents a pie chart.
@@ -67,31 +66,33 @@ func (c *Pie) Add(name string, data map[string]interface{}, options ...seriesOpt
 	return c
 }
 
+type layer struct {
+	key string
+	val interface{}
+}
+
+type layers []layer
+
+func (p layers) Len() int { return len(p) }
+func (p layers) Less(i, j int) bool {
+	return cast.ToFloat64(p[i].val) > cast.ToFloat64(p[j].val)
+}
+
+func (p layers) Swap(i, j int) { p[i], p[j] = p[j], p[i] }
+
 // AddSorted sorts and adds new data sets.
 func (c *Pie) AddSorted(name string, data map[string]interface{}, options ...seriesOptser) *Pie {
 	nvs := make([]datatypes.NameValueItem, 0)
 
 	// sort by value
-	hack := map[interface{}]string{}
-	hackkeys := []float64{}
+	ls := layers{}
 	for key, val := range data {
-		valFloat, err := cast.ToFloat64E(val)
-		if err != nil {
-			panic("value is not float")
-		}
-
-		hack[valFloat] = key
-
-		hackkeys = append(hackkeys, valFloat)
+		ls = append(ls, layer{key: key, val: val})
 	}
-	sort.Slice(hackkeys, func(i, j int) bool {
-		return hackkeys[i] > hackkeys[j]
-	})
+	sort.Sort(ls)
 
-	for _, val := range hackkeys {
-		nvs = append(nvs, datatypes.NameValueItem{Name: hack[val], Value: val})
-
-		// fmt.Println("==> ", hack[val], " === ", val)
+	for _, l := range ls {
+		nvs = append(nvs, datatypes.NameValueItem{Name: l.key, Value: l.val})
 	}
 	series := singleSeries{Name: name, Type: ChartType.Pie, Data: nvs}
 	series.setSingleSeriesOpts(options...)
