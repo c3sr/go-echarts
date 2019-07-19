@@ -170,8 +170,8 @@ func barMark() *charts.Bar {
 func barMarkCustom() *charts.Bar {
 	bar := charts.NewBar()
 	bar.SetGlobalOptions(
-		charts.TitleOpts{Title: "Bar-自定义标记+主题"},
-		charts.InitOpts{PageTitle: "Awesome", Theme: charts.ThemeType.Macarons},
+		charts.TitleOpts{Title: "MLModelScope"},
+		charts.InitOpts{PageTitle: "MLModelScope", Theme: charts.ThemeType.Macarons},
 	)
 	bar.AddXAxis(nameItems).
 		AddYAxis("商家A", randInt()).

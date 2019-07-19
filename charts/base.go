@@ -1,8 +1,9 @@
 package charts
 
 import (
-	"github.com/chenjiandongx/go-echarts/datatypes"
 	"regexp"
+
+	"github.com/chenjiandongx/go-echarts/datatypes"
 )
 
 type globalOptser interface {
@@ -12,7 +13,7 @@ type globalOptser interface {
 // InitOpts contains options for the canvas.
 type InitOpts struct {
 	// 生成的 HTML 页面标题
-	PageTitle string `default:"Awesome go-echarts"`
+	PageTitle string `default:"MLModelScope charts"`
 	// 画布宽度
 	Width string `default:"900px"`
 	// 画布高度

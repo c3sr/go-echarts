@@ -27,6 +27,6 @@ func TestBarDefaultValue(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, bar.Width, "900px")
 	assert.Equal(t, bar.Height, "500px")
-	assert.Equal(t, bar.PageTitle, "Awesome go-echarts")
+	assert.Equal(t, bar.PageTitle, "MLModelScope Chart")
 	assert.Equal(t, bar.AssetsHost, "http://chenjiandongx.com/go-echarts-assets/assets/")
 }

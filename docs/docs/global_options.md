@@ -29,7 +29,7 @@ type globalOptser interface {
 ```go
 type InitOpts struct {
     // 生成的 HTML 页面标题
-    PageTitle string `default:"Awesome go-echarts"`
+    PageTitle string `default:"MLModelScope charts"`
     // 画布宽度
     Width string `default:"900px"`
     // 画布高度

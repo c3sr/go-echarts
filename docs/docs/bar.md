@@ -300,7 +300,7 @@ import "github.com/chenjiandongx/go-echarts/common"
 bar := charts.NewBar()
 bar.SetGlobalOptions(
     charts.TitleOpts{Title: "Bar-自定义标记+主题"},
-    charts.InitOpts{PageTitle: "Awesome", Theme: common.ThemeType.Macarons},
+    charts.InitOpts{PageTitle: "MLModelScope", Theme: common.ThemeType.Macarons},
 )
 bar.AddXAxis(nameItems).
     AddYAxis("商家A", randInt()).
