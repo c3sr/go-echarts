@@ -125,10 +125,14 @@ type ToolboxOpts struct {
 
 func (ToolboxOpts) markGlobal() {}
 
+type SaveAsImage struct {
+	PixelRatio int `json:"pixelRatio"`
+}
+
 // TBFeature is a feature component under toolbox.
 type TBFeature struct {
 	// 保存为图片
-	SaveAsImage struct{} `json:"saveAsImage"`
+	SaveAsImage `json:"saveAsImage"`
 	// 数据区域缩放。目前只支持直角坐标系的缩放
 	DataZoom struct{} `json:"dataZoom"`
 	// 数据视图工具，可以展现当前图表所用的数据，编辑后可以动态更新
