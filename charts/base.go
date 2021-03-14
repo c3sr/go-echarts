@@ -3,7 +3,7 @@ package charts
 import (
 	"regexp"
 
-	"github.com/chenjiandongx/go-echarts/datatypes"
+	"github.com/go-echarts/go-echarts/datatypes"
 )
 
 type globalOptser interface {

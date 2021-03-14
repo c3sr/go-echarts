@@ -4,7 +4,7 @@ import (
 	"io"
 	"sort"
 
-	"github.com/chenjiandongx/go-echarts/datatypes"
+	"github.com/go-echarts/go-echarts/datatypes"
 	"github.com/spf13/cast"
 )
 

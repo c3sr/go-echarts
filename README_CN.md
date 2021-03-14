@@ -13,26 +13,26 @@
     <a href="https://ci.appveyor.com/project/chenjiandongx/go-echarts">
         <img src="https://ci.appveyor.com/api/projects/status/kdxi0s1nc1t6dqn0?svg=true" alt="Build Status">
     </a>
-    <a href="https://goreportcard.com/report/github.com/chenjiandongx/go-echarts">
-        <img src="https://goreportcard.com/badge/github.com/chenjiandongx/go-echarts" alt="Go Report Card">
+    <a href="https://goreportcard.com/report/github.com/go-echarts/go-echarts">
+        <img src="https://goreportcard.com/badge/github.com/go-echarts/go-echarts" alt="Go Report Card">
     </a>
     <a href="https://opensource.org/licenses/MIT">
         <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="MIT License">
     </a>
-        <a href="https://godoc.org/github.com/chenjiandongx/go-echarts">
-        <img src="https://godoc.org/github.com/chenjiandongx/go-echarts?status.svg" alt="GoDoc">
+        <a href="https://godoc.org/github.com/go-echarts/go-echarts">
+        <img src="https://godoc.org/github.com/go-echarts/go-echarts?status.svg" alt="GoDoc">
     </a>
 </p>
 
 > 如果一门语言可以用来写爬虫，那么它就需要一个优雅的数据可视化库。 --- by chenjiandongx
 
-在 Golang 这门语言中，目前数据可视化的第三方库还是特别少，[go-echarts](https://github.com/chenjiandongx/go-echarts) 的开发就是为了填补这部分的空隙。[Echarts](https://echarts.baidu.com) 是百度开源的非常优秀的可视化图表库，凭借着良好的交互性，精巧的图表设计，得到了众多开发者的认可。也有其他语言为其实现了相应语言版本的接口，如 Python 的 [pyecharts](https://github.com/pyecharts/pyecharts)，go-echarts 也是借鉴了 pyecharts 的一些设计思想。
+在 Golang 这门语言中，目前数据可视化的第三方库还是特别少，[go-echarts](https://github.com/go-echarts/go-echarts) 的开发就是为了填补这部分的空隙。[Echarts](https://echarts.baidu.com) 是百度开源的非常优秀的可视化图表库，凭借着良好的交互性，精巧的图表设计，得到了众多开发者的认可。也有其他语言为其实现了相应语言版本的接口，如 Python 的 [pyecharts](https://github.com/pyecharts/pyecharts)，go-echarts 也是借鉴了 pyecharts 的一些设计思想。
 
 
 ### 🔰 安装
 
 ```shell
-$ go get -u github.com/chenjiandongx/go-echarts/...
+$ go get -u github.com/go-echarts/go-echarts/...
 ```
 
 ### ✨ 特性
@@ -97,7 +97,7 @@ $ go get -u github.com/chenjiandongx/go-echarts/...
 
 运行 example/main.go 可预览所有示例
 ```shell
-$ cd your/gopath/src/github.com/chenjiandongx/go-echarts/example
+$ cd your/gopath/src/github.com/go-echarts/go-echarts/example
 $ go build .
 $ ./example
 ```
