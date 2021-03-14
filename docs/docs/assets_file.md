@@ -6,16 +6,16 @@ sidebar_label: 静态文件
 
 ## 远程引用
 
-go-echarts 没有自带自身所需要引用的 JS/CSS 文件，均是通过远程引用，引用的地址为 http://chenjiandongx.com/go-echarts-assets/assets/，这是通过我的一个项目 [go-echarts-assets](https://github.com/chenjiandongx/go-echarts-assets) 实现的。
+go-echarts 没有自带自身所需要引用的 JS/CSS 文件，均是通过远程引用，引用的地址为 http://chenjiandongx.com/go-echarts-assets/assets/，这是通过我的一个项目 [go-echarts-assets](https://github.com/go-echarts/go-echarts-assets) 实现的。
 
-任何想使用自己远程 Host 的开发者都可以 Fork [go-echarts-assets](https://github.com/chenjiandongx/go-echarts-assets) 这个项目，使用 Github 的话可以直接使用 Github Page 部署，其他情况使用自己的服务器部署也行。
+任何想使用自己远程 Host 的开发者都可以 Fork [go-echarts-assets](https://github.com/go-echarts/go-echarts-assets) 这个项目，使用 Github 的话可以直接使用 Github Page 部署，其他情况使用自己的服务器部署也行。
 
 ## 本地引用
 
 下面以本地开启服务器为例
 
 ```shell
-$ git clone https://github.com/chenjiandongx/go-echarts-assets.git
+$ git clone https://github.com/go-echarts/go-echarts-assets.git
 $ cd go-echarts-assets
 $ go run main.go
 ```
@@ -73,7 +73,7 @@ FindFirstFile src\$GOPATH\src\github.com\chenjiandongx\go-echarts\templates\rout
 
 Linux/MacOS
 ```bash
-$ cd $GOPATH/src/github.com/chenjiandongx/go-echarts
+$ cd $GOPATH/src/github.com/go-echarts/go-echarts
 $ ./doPackr.sh
 ```
 
